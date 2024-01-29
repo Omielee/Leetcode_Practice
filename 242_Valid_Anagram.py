@@ -29,5 +29,5 @@ class Solution:
         # Solution 2: Python in one line. Time: O(n),Space O(n)
         return Counter(s) == Counter(t)
     
-        # Solution 3: Sorted first and then compare
+        # Solution 3: Sorted first and then compare. Time: O(n log n)
         return sorted(s) == sorted (t)
