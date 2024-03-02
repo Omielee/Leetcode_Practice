@@ -1,3 +1,4 @@
+# <<<<<<< Updated upstream
 def max_solar_bulbs_sliding_window(bulb_sequence):
     # Add a '0' at the beginning and at the end of the sequence
     bulbs = ['0'] + list(bulb_sequence) + ['0']
@@ -18,3 +19,36 @@ def max_solar_bulbs_sliding_window(bulb_sequence):
 input_sequence = '0001'
 result_count = max_solar_bulbs_sliding_window(input_sequence)
 print(result_count)
+# =======
+def findminTrips(packageweight):
+    weight_count={}
+    for weight in packageweight:
+        if weight in weight_count:
+            weight_count[weight] +=1
+        else:
+            weight_count[weight] =1
+    # print(weight_count)
+    trips = 0
+    for count in weight_count.values():
+        if count == 1:
+            return -1
+        elif count %3 == 0:
+            trips += count//3
+        else:
+            if count %2 == 0:
+                trips += count//2
+            else:
+                trips +=1
+                trips +=(count-2)//3
+    return trips
+
+# packageweight = [1,8,5,8,5,1,1]
+# packageweight = [3,4,4,3,1]
+# packageweight = [2,4,6,6,4,2,4]
+packageweight = [4,4,6,6,4,4,4]
+res = findminTrips(packageweight)
+print(res)
+# findminTrips([1,8,5,8,5,1,1])
+# findminTrips([3,4,4,3,1])
+# findminTrips([2,4,6,6,4,2,4])
+# findminTrips([4,4,6,6,4,4,4])
